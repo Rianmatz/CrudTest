@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: antiquewhite;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+}
+
+#front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto;
+    width: fit-content;
+    background-color: wheat;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+#conta{
+    background-color: wheat;
+    width: fit-content;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#logado{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#deslogar button{
+    color: red;
+    padding: 20px;
+    width: 200px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#deslogar button:hover{
+
+    background-color: black;
+    cursor: pointer;
+}
+
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#mensagem{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+/* section */
+
+
+#login{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 30px;
+}
+
+#login button{
+    color: blue;
+    padding: 20px;
+    width: 120px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#login button:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+section{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: top;
+}
+
+#left{
+    background-color: wheat;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 8px;
+    width: 400px;
+    height: fit-content;
+}
+
+#listadas{
+    text-align: center;
+}
+
+.umatask{
+    border: 3px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+    margin-top: 10px;
+}
+.umacompleta{
+    border: 3px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(131, 255, 131);
+}
+
+.formulario-editor{
+    display: none;
+}
+
+.formulario-editor.aberto{
+    display: block;
+}
+
+#middle{
+    background-color: wheat;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 8px;
+    height: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+#submit{
+    margin-top: 20px;
+}
+
+.titulo{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+
+
+.errors{
+    color: red;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#right{
+    background-color: wheat;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 8px;
+    width: 400px;
+    height: fit-content;
+}
+
+input{
+    padding: 5px;
+}
+
+button{
+    padding: 5px;
+}
+
+.buscar{
+    background-color: yellow;
+    margin-bottom: 10px;
+}
+
+.criartarefa{
+    background-color: yellow;
+    margin-top: 10px;
+}
+
+.vazia{
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.limpar{
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+.remover{
+    background-color: red;
+}
+
+.concluir{
+    background-color: lime;
+    margin-top: 10px;
+}
+
+.editar{
+    background-color: cyan;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
