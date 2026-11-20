@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('date');
             $table->timestamp('complete_in')->nullable();
             $table->boolean('complete')->default(false);
+            $table->string('priority');
+            $table->unsignedTinyInteger('progress')->default(0);
         });
     }
 

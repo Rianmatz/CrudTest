@@ -9,6 +9,7 @@ Route::post('/tasks', [TasksController::class, 'store'])->middleware();
 Route::delete('/tasks/{task}', [TasksController::class, 'destroy'])->middleware();
 Route::patch('/tasks/{task}/complete', [TasksController::class, 'complete'])->middleware();
 Route::put('/tasks/{task}', [TasksController::class, 'update'])->middleware();
+Route::patch('/tasks/{task}/progress', [TasksController::class, 'progress'])->middleware();
 
 
 

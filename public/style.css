@@ -18,12 +18,63 @@ body{
     border-radius: 10px;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#middle{
+    background-color: wheat;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 8px;
+    height: fit-content;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#middle h2{
+    margin-top: 0px;
+}
+
+#middle form{
+    display: flex;
+    align-items: center;
+}
+
+#middle .errors{
+    margin: 0px;
+}
+
+.duo{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+#criar{
+    display: flex;
+    align-items: center;
+}
+
+#criartarefa{
+    background-color: yellow;
+    margin: 0px;
+    margin-left: 10px;
+    height: 100%;
+    align-self: self-end;
+    padding: 5px;
+}
+
+
 #conta{
     background-color: wheat;
     width: fit-content;
     padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
+    height: fit-content;
 }
 
 #logado{
@@ -59,10 +110,6 @@ h1{
 }
 
 
-
-/* section */
-
-
 #login{
     display: flex;
     justify-content: space-between;
@@ -83,75 +130,157 @@ h1{
     cursor: pointer;
 }
 
+/* section */
+
 section{
    display: flex;
-   justify-content: space-evenly;
-   align-items: top;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 #left{
+    display: flex;
     background-color: wheat;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     border: 1px solid black;
     box-shadow: 4px 4px 8px;
-    width: 400px;
+    width: fit-content;
     height: fit-content;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
-#listadas{
-    text-align: center;
+.buscando form{
+    display: flex;
+    align-items: center;
 }
+
+#top{
+    display: flex;
+    align-items: center;
+}
+
+.itens{
+    display: flex;
+    align-items: center;
+    
+}
+
+.itens div{
+    border: 1px solid black;
+    margin-right: 10px;
+    background-color: antiquewhite;
+    width: 170px;
+}
+
+.itens h3{
+    background-color: wheat;
+    border: solid 1px black;
+    width: 170px;
+    text-align: center;
+    margin: 0px;
+}
+
+
+.titulo{
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.descrição{
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+.prioridade{
+    text-align: center;
+    margin: 0px;
+    width: 170px;
+}
+.prioridade.Baixa{
+    background-color: rgb(39, 190, 39);
+}
+.prioridade.Media{
+    color: black;
+    background-color: yellow;
+}
+.prioridade.Alta{
+    background-color: rgb(255, 80, 80);
+}
+.data{
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+.dataconcluida{
+     text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+.progresso{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+}
+
+output{
+    width: 30px;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
 
 .umatask{
+    display: flex;
     border: 3px solid black;
     padding: 10px;
-    margin-bottom: 10px;
-    background-color: antiquewhite;
+    background-color: wheat;
     margin-top: 10px;
+    flex-direction: column;
 }
 .umacompleta{
     border: 3px solid black;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: rgb(131, 255, 131);
+    background-color: wheat;
+    margin-top: 10px;
 }
 
 .formulario-editor{
     display: none;
+
 }
 
-.formulario-editor.aberto{
-    display: block;
+.formulario-editor.aberto {
+    display: flex;
+    margin-top: 10px;
 }
 
-#middle{
-    background-color: wheat;
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid black;
-    box-shadow: 4px 4px 8px;
-    height: fit-content;
-    margin-left: 20px;
-    margin-right: 20px;
+.formulario-editor.aberto form {
+    display: flex;
+    align-items: center;
 }
 
 form{
     display: flex;
-    flex-direction: column;
 }
 
 #submit{
     margin-top: 20px;
 }
-
-.titulo{
-    font-size: 25px;
-    font-weight: bold;
-    margin-top: 0px;
-}
-
-
 
 .errors{
     color: red;
@@ -161,13 +290,13 @@ form{
 }
 
 #right{
-    background-color: wheat;
-    padding: 30px;
+    background-color: rgb(93, 255, 93);
+    padding: 20px;
     border-radius: 10px;
     border: 1px solid black;
     box-shadow: 4px 4px 8px;
-    width: 400px;
-    height: fit-content;
+    margin-top: 50px;
+    width: fit-content;
 }
 
 input{
@@ -180,13 +309,10 @@ button{
 
 .buscar{
     background-color: yellow;
-    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
-.criartarefa{
-    background-color: yellow;
-    margin-top: 10px;
-}
+
 
 .vazia{
     background-color: antiquewhite;
@@ -195,22 +321,22 @@ button{
 
 .limpar{
     background-color: red;
-    margin-bottom: 10px;
 }
 
 .remover{
     background-color: red;
+    margin-right: 10px;
 }
 
 .concluir{
     background-color: lime;
-    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .editar{
     background-color: cyan;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 

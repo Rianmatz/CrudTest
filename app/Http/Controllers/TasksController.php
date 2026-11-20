@@ -45,11 +45,13 @@ class TasksController extends Controller
             $request->validate([
             'title' => 'required|string|max:100',
             'description' => 'nullable|string',
-            'date' => 'date_format:Y-m-d|after_or_equal:today|before_or_equal:2999-12-31'],
+            'date' => 'date_format:Y-m-d|after_or_equal:today|before_or_equal:2999-12-31',
+            'priority' => 'required|in:Alta,Media,Baixa'],
             [
             'title.required' => 'O nome é obrigatorio',
             'date.after_or_equal' => 'A data não pode ser anterior a hoje.',
             'date.date_format' => 'Informe uma data válida',
+            'priority.required' =>'Selecione uma prioridade'
              
         ]);
 
@@ -57,6 +59,7 @@ class TasksController extends Controller
         $task->description = $request->description ?? '';
         $task->date = $request->date;
         $task->user_id = Auth::id();
+        $task->priority = $request->priority;
 
         $task -> save();
 
@@ -93,18 +96,33 @@ class TasksController extends Controller
         [
             'title' => 'required|string|max:100',
             'description' => 'nullable|string',
-            'date' => 'date_format:Y-m-d|after_or_equal:today|before_or_equal:2999-12-31'],[
+            'date' => 'date_format:Y-m-d|after_or_equal:today|before_or_equal:2999-12-31',
+             'priority' => 'required|in:Alta,Media,Baixa'],[
             
             'title.required' => 'O nome é obrigatorio',
             'date.after_or_equal' => 'A data não pode ser anterior a hoje.',
             'date.date_format' => 'Informe uma data válida',
+            'priority.required' =>'Selecione uma prioridade'
             ]);   
         
         $task->title = $request->title;
         $task->description = $request->description ?? '';
         $task->date = $request->date;
+        $task->priority = $request->priority;
         $task->save();
 
         return redirect('/')->with('msg', 'Tarefa Editada!');
+    }
+
+    public function progress(Request $request, Task $task){
+
+    abort_if($task->user_id !== Auth::id(), 403);
+
+    $request->validate(['progress' => 'required|integer|between:0,100']);
+
+    $task->progress = $request->progress;
+    $task->save();
+
+    return redirect('/');
     }
 }
