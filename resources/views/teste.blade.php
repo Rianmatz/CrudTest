@@ -58,7 +58,7 @@
                             </select>
                         </div>
                         <div class="duo">
-                            <label for="hours">Tempo estimado:</label>
+                            <label for="hours">Tempo estimado (H)</label>
                             <input type="number" name="hours" id="hours" min="0" max="999" placeholder="0"
                                 value="{{ old('hours') }}">
                                 @error('hours') 
