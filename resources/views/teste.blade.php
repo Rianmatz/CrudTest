@@ -57,6 +57,14 @@
                                 <option value="Alta">Alta</option>
                             </select>
                         </div>
+                        <div class="duo">
+                            <label for="hours">Tempo estimado:</label>
+                            <input type="number" name="hours" id="hours" min="0" max="999" placeholder="0"
+                                value="{{ old('hours') }}">
+                                @error('hours') 
+                                <p class="errors">{{ $message }}</p> 
+                                @enderror
+                        </div>            
                         <input type="submit" value="Criar tarefa" id="criartarefa">
                     </form>
                 </div>
@@ -131,6 +139,12 @@
                                             <output>{{ $task->progress }}</output>
                                         </form>
                                     </div>
+                                    @if (intdiv($task->estimated_hours ?? 0, 60) > 0)
+                                        <div class="conteudo">
+                                        <h3>Tempo estimado</h3>
+                                        <p class="horas">{{ intdiv($task->estimated_hours, 60) }}H</p>
+                                        </div>
+                                    @endif
 
                                 </div>
                                 <form action="/tasks/{{ $task->id }}/complete" method="post">
@@ -192,6 +206,16 @@
                                     @enderror
                                 @endif
                             </div>
+                            <div class="duo">
+                                <label>Tempo estimado:</label>
+                                <input type="number" name="hours" min="0" max="999"
+                                        value="{{ old('editing') == $task->id}}"> 
+                             @if (old('editing') == $task->id)
+                                    @error('hours', 'edit') <span class="errors">{{ $message }}</span> 
+                                    @enderror
+                             @endif
+                            </div>
+
                                 <button type="submit" class="editar" >Salvar</button>    
                             </form>
                             </div>

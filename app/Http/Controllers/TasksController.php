@@ -46,11 +46,13 @@ class TasksController extends Controller
             'title' => 'required|string|max:100',
             'description' => 'nullable|string',
             'date' => 'date_format:Y-m-d|after_or_equal:today|before_or_equal:2999-12-31',
+            'hours' => 'required|integer|min:0|max:999',
             'priority' => 'required|in:Alta,Media,Baixa'],
             [
             'title.required' => 'O nome é obrigatorio',
             'date.after_or_equal' => 'A data não pode ser anterior a hoje.',
             'date.date_format' => 'Informe uma data válida',
+            'hours.requerired' => 'Informe uma hora estimada',
             'priority.required' =>'Selecione uma prioridade'
              
         ]);
@@ -59,7 +61,8 @@ class TasksController extends Controller
         $task->description = $request->description ?? '';
         $task->date = $request->date;
         $task->user_id = Auth::id();
-        $task->priority = $request->priority;
+        $task->priority =  $request->priority;
+        $task->estimated_hours = (int) $request->hours * 60;
 
         $task -> save();
 
@@ -97,11 +100,13 @@ class TasksController extends Controller
             'title' => 'required|string|max:100',
             'description' => 'nullable|string',
             'date' => 'date_format:Y-m-d|after_or_equal:today|before_or_equal:2999-12-31',
+            'hours' => 'required|integer|min:0|max:999',
              'priority' => 'required|in:Alta,Media,Baixa'],[
             
             'title.required' => 'O nome é obrigatorio',
             'date.after_or_equal' => 'A data não pode ser anterior a hoje.',
             'date.date_format' => 'Informe uma data válida',
+            'hours.requerired' => 'Informe uma hora estimada',
             'priority.required' =>'Selecione uma prioridade'
             ]);   
         
@@ -109,6 +114,7 @@ class TasksController extends Controller
         $task->description = $request->description ?? '';
         $task->date = $request->date;
         $task->priority = $request->priority;
+        $task->estimated_hours = (int) $request->hours * 60;
         $task->save();
 
         return redirect('/')->with('msg', 'Tarefa Editada!');

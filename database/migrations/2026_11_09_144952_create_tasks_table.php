@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('complete')->default(false);
             $table->string('priority');
             $table->unsignedTinyInteger('progress')->default(0);
+            $table->unsignedInteger('estimated_hours');
         });
     }
 
